@@ -1,5 +1,5 @@
 {
-    const formElement = document.querySelector(".js-form");
+    const submitElement = document.querySelector(".js-submit");
     const calculateResult = (currency, plnAmount) => {
 
         const usd = 4.55;
@@ -35,10 +35,40 @@
         updateResultText(plnAmount, result, currency);
 
     };
-    const init = () => {
+    {
+        // const init = () => {
+        //     const inputSubmitMode = document.querySelector(".js-form");
 
-        formElement.addEventListener("submit", onFormSubmit);
-    };
-    init();
+        //     inputSubmitMode.classList.contains('js-submit') ? submitElement.addEventListener("submit", onFormSubmit) :
+        //         submitElement.addEventListener("input", onFormSubmit);
 
+        // }
+
+        // init();
+        const init = () => {
+            submitElement.addEventListener("submit", onFormSubmit);
+        };
+        init();
+
+    }
+}
+{
+    {
+        const init = () => {
+            const modeButton = document.querySelector(".js-modeButton");
+            modeButton.addEventListener("click", changeInputMode);
+
+
+        }
+        const changeInputMode = () => {
+            const inputSubmitMode = document.querySelector(".js-form");
+            const modeButton = document.querySelector(".js-modeButton");
+
+            inputSubmitMode.classList.toggle("js-submit");
+            inputSubmitMode.classList.toggle("js-input");
+
+            inputSubmitMode.classList.contains('js-submit') ? modeButton.innerText = "Use input mode" : modeButton.innerText = "Use submit mode";
+        }
+        init();
+    }
 }

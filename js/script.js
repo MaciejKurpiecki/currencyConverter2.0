@@ -102,6 +102,7 @@
     const changeInputMode = () => {
         const inputSubmitMode = document.querySelector(".js-form");
         const modeButton = document.querySelector(".js-modeButton");
+        const resultButton = document.querySelector(".js-resultButton");
         const submitResult = document.querySelector(".js-resultParagraph");
         const inputResult = document.querySelector(".js-secondaryResultParagraph");
 
@@ -110,10 +111,10 @@
 
         inputSubmitMode.classList.contains('js-submit') ? modeButton.innerText = "Use input mode" : modeButton.innerText = "Use submit mode";
 
-        inputSubmitMode.classList.contains('js-submit') ? inputResult.toggleAttribute("hidden") : inputResult.toggleAttribute("hidden")
-
-        inputSubmitMode.classList.contains('js-input') ? submitResult.toggleAttribute("hidden") : submitResult.toggleAttribute("hidden")
+        inputSubmitMode.classList.contains('js-submit') ? inputResult.toggleAttribute("hidden") : inputResult.removeAttribute("hidden")
+        inputSubmitMode.classList.contains('js-input') ? submitResult.toggleAttribute("hidden") : submitResult.removeAttribute("hidden")
+        inputSubmitMode.classList.contains('js-input') ? resultButton.toggleAttribute("hidden") : resultButton.removeAttribute("hidden")
 
     }
     init();
-}
+    }

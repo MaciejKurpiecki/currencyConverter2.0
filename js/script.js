@@ -91,25 +91,29 @@
     }
 }
 {
-    const init = () => {
-        const modeButton = document.querySelector(".js-modeButton");
-        modeButton.addEventListener("click", changeInputMode);
+    const modeButton = document.querySelector(".js-modeButton");
 
-    }
-    const changeInputMode = () => {
-        const inputSubmitMode = document.querySelector(".js-form");
-        const modeButton = document.querySelector(".js-modeButton");
+    const init = () => {
+        modeButton.addEventListener("click", changeResultDisplayed);
+        modeButton.addEventListener("click", changeModeButtonText);
+
+    };
+    const changeResultDisplayed = () => {
         const resultButton = document.querySelector(".js-resultButton");
         const submitResult = document.querySelector(".js-resultParagraph");
         const inputResult = document.querySelector(".js-secondaryResultParagraph");
 
-        inputSubmitMode.classList.toggle("js-submit");
-        inputSubmitMode.classList.toggle("js-input");
         inputResult.toggleAttribute("hidden");
         submitResult.toggleAttribute("hidden");
         resultButton.toggleAttribute("hidden");
+    };
+    const changeModeButtonText = () => {
+        const inputSubmitMode = document.querySelector(".js-form");
 
+        inputSubmitMode.classList.toggle("js-submit");
+        inputSubmitMode.classList.toggle("js-input");
         inputSubmitMode.classList.contains('js-submit') ? modeButton.innerText = "Use input mode" : modeButton.innerText = "Use submit mode";
     };
     init();
+
 }

@@ -34,7 +34,7 @@
 .form__paragraph {
     text-align: center;
     flex-grow: 1;
-   }
+}
 
 .form__button {
     align-self: center;
@@ -45,4 +45,9 @@
     background-color: #2e8b57;
     font-weight: bold;
     color: #fff;
-   }
+}
+
+.form__button--mode {
+    align-self: stretch;
+    border-radius: 15px 5px;
+}

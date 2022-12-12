@@ -91,12 +91,9 @@
     }
 }
 {
-
     const init = () => {
         const modeButton = document.querySelector(".js-modeButton");
         modeButton.addEventListener("click", changeInputMode);
-        modeButton.addEventListener("click", hideElement);
-
 
     }
     const changeInputMode = () => {
@@ -108,13 +105,11 @@
 
         inputSubmitMode.classList.toggle("js-submit");
         inputSubmitMode.classList.toggle("js-input");
+        inputResult.toggleAttribute("hidden");
+        submitResult.toggleAttribute("hidden");
+        resultButton.toggleAttribute("hidden");
 
         inputSubmitMode.classList.contains('js-submit') ? modeButton.innerText = "Use input mode" : modeButton.innerText = "Use submit mode";
-
-        inputSubmitMode.classList.contains('js-submit') ? inputResult.toggleAttribute("hidden") : inputResult.removeAttribute("hidden")
-        inputSubmitMode.classList.contains('js-input') ? submitResult.toggleAttribute("hidden") : submitResult.removeAttribute("hidden")
-        inputSubmitMode.classList.contains('js-input') ? resultButton.toggleAttribute("hidden") : resultButton.removeAttribute("hidden")
-
-    }
+    };
     init();
-    }
+}
